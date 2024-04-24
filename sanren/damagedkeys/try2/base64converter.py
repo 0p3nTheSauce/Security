@@ -1,0 +1,43 @@
+import base64
+import binascii
+
+# Base64-encoded data
+encoded_data = b"""MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCZt1r5EzPeNsrB
+w74MtKzusEqRs+hUlY968E5VV/iUwpLreT/O9cF6sflsER3ntXxuTpr3KfvOwM0m
+/yiba0aXXBpX5RimAS+T6g2jl4Zsu+l/gksx8OzeGzbjPxXaDYu/G2++Uuyy74uW
++mQyhL0qx0MBSdz/QQ+voXICvgj8AB7UoQnn1sqsbwe1WDaLtDrZPLB6bGI/3Q+W
+fop3nzHbm/3Eric2aigrrpKUU6NB2wchxyQLuFajgOrbldPcn72BZwAXcjtpCanO
+Y6MFKwZLv1sVLmgXUhv4B2lmVENavdZTvy7kM5WPXSImGIxDOefLXlyj8DEe4/DH
+GnxtCbzvAgMBAAECggEAA6r5xoqFwoSnyLQ+zn2blSp4ID5QI3/AgU96OKEbv/j3
+ABvP9CrhdGfXKscrYbVvHanntFDri3htEyqKS0/lyrc0GoRpI46EFlFC0ad/WdlC
+1Hve092kcuK1Wy2Zla8DEAru9Kl0sNeOCvE4mNgAASUcdsubZ8Y9Dvsyn3KHZlpU
+4WDvl3El0qTinukhNrrflFe7tpLI0oFT/7dDX4DDndasqbBjq8AIi+uFAksq/S5G
+gP5SSSx0FzlABZ1LU4XimeAqQF0smY2HWRcY4pJ6Lw+lD6M+9V0I9SIUFPLIom2/
+i6O7SzFAv39GSVOsSlvB8g6CKYmvL94s0K6grO5eMQKBgQDYTIPg12KE49zh6dR7
+v013Q/bp9w3JHVhIr4H2/VBDGb/j73blAxGVUg3yxP66uJ9voxrvZk50BcF6AXBE
+Kh3bKhwmfoXY1KCEuuzaWpe1H22pmWSI4gW+KiHauZGRSHiFGkQSasziXD39U0iu
+KPODO/diqIzXDsnjNO/7Bu4sJwKBgQC17jJp/il7agfXDdr/BTmhGrz5s8bxlfAd
+64cFrt4WopPTULSYxuycjIt8QFLly1NpxwaOoorYOYm9D+NWIt8szMWTBRg7GzdU
+YiH040GBT+dU0E7EbLq/myzloUH+laEoyqxuAtsJpLp3/BrO8EK914V0fYZlkA8S
+Ple6Nfi9+QKBgQDPnLnkwbgtp+1m5qNuWBQKCzFgJyOTS9hmhBeyNDiq/3dBWKN9
+c/GXqtf6kv2Ryg43AI6lBUT+dlvcOK9Crk5UBFpa1IyysHyWijk36Ua+sjj3VmW6
+QYCTpCs0n3PKyI3t7GU0bFDWYQWbNyqHCIWcDJ4Kk5AECIzdyf0irOdFdwKBgDvn
+OWxTBr+fMwOpiUFNLCOS1UR24HutfgmsAqJpaLEVSQ1cVoqzfTcyw77ewyzs3QNI
+SC1w8byufV7mO1miU8/BgRCerdLQbFB5m2qx5WC5uZbgm/7rOjZa1tapWTyFcjIn
+Qc1bXVn4hnl5Zi5bR+6QZ13q8vTAEWZVZrdmjAepAoGBAJH687PXn+yg58tZHrAS
+O2bvqWuBTvS1apWUgYn3PemV1Q5sYK1WiGajrZ2FDNE/hzlbazk9NdGh3qLVog2R
+YqKkkml5aL7sr0YFNHaynyODC1RK0Glphoo+S15EdJjHeiM9eM50Vj7LDFYbRb7u
+7SJbzLqNAIEs0W3gOLExw5Yq"""
+
+# Decode Base64-encoded data
+decoded_data = base64.b64decode(encoded_data)
+
+# Convert bytes to string (if applicable)
+# decoded_string = decoded_data.decode('utf-8')
+
+# Convert bytes to hexadecimal representation
+hex_representation = binascii.hexlify(decoded_data)
+
+# print("Decoded data:", decoded_data)
+# print("Decoded string:", decoded_string)
+print("Hexadecimal representation:", hex_representation)
