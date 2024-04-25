@@ -39,6 +39,10 @@ def colourD(string, colour):
         print(colors.BLUE + string + colors.RESET)
     elif colour == 3:
         print(colors.YELLOW + string + colors.RESET)
+    elif colour == 4:
+        print(colors.MAGENTA + string + colors.RESET)
+    elif colour == 5:
+        print(colors.CYAN + string + colors.RESET)
     else:
         print("colour not available")
             
@@ -69,7 +73,8 @@ def main():
     partialKey = getLine("partialKey_baked")
     #deliminator = '028201'
     #delimiters = ['028201', '02818100', '010001']
-    delimiters = ['028201', '02818', '010001']
+    #delimiters = ['028201', '02818', '010001']
+    delimiters = ['02820101', '0203', '02820100', '028181', '028180']
     #delimiters = ['02820101','02820100' '02818100', '010001']
     print("Dummy key: ")
     recHighlight(dummyKey, delimiters, 0)

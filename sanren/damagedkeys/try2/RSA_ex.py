@@ -15,7 +15,8 @@ public_key = private_key.public_key()
 # Serialize keys to PEM format
 private_key_pem = private_key.private_bytes(
     encoding=serialization.Encoding.PEM,
-    format=serialization.PrivateFormat.PKCS8,
+    #format=serialization.PrivateFormat.PKCS8,
+    format=serialization.PrivateFormat.TraditionalOpenSSL,
     encryption_algorithm=serialization.NoEncryption()
 )
 public_key_pem = public_key.public_bytes(
@@ -54,3 +55,13 @@ decrypted_plaintext = private_key.decrypt(
 )
 
 print("Decrypted plaintext:", decrypted_plaintext.decode())
+
+# def encryptT(plaintext):
+    
+
+# def main():
+#     print("RSA example 1")
+
+
+# if __name__ == "__main__":
+#     main()
