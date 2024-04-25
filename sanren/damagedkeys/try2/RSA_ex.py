@@ -37,6 +37,11 @@ ciphertext = public_key.encrypt(
 )
 
 print("Ciphertext:", ciphertext)
+try:
+    with open("ciphertext.bin", "wb") as file:
+        file.write(ciphertext)
+except IOError as e:
+    print("Error writing to a file: ", e)
 
 # Decrypt the ciphertext using the private key
 decrypted_plaintext = private_key.decrypt(

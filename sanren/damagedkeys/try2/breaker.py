@@ -24,25 +24,58 @@ def getSubstrings(string, deliminator):
     substrings = string.split(deliminator)
     return substrings
     
-def highLight(string, substring):
-    substrings = getSubstrings(string, substring)
+def highLight(substrings, delimiter, colour):
     print(substrings[0])
     for i in range(1, len(substrings)):
-        print(colors.RED + substring + colors.RESET)
+        colourD(delimiter, colour)
         print(substrings[i])
+    
+def colourD(string, colour):
+    if colour == 0:
+        print(colors.RED + string + colors.RESET)
+    elif colour == 1:
+        print(colors.GREEN + string + colors.RESET)
+    elif colour == 2:
+        print(colors.BLUE + string + colors.RESET)
+    elif colour == 3:
+        print(colors.YELLOW + string + colors.RESET)
+    else:
+        print("colour not available")
             
+def restDelimiters(delimiters):
+    leftDel = []
+    for i in range(1, len(delimiters)):
+        leftDel.append(delimiters[i])
+    return leftDel
+            
+def recHighlight(string, delimiters, colour):
+    substrings = getSubstrings(string, delimiters[0])
+    if len(substrings) and len(delimiters) > 1:
+        leftDel = restDelimiters(delimiters)
+        recHighlight(substrings[0], leftDel, colour+1)
+        for i in range(1, len(substrings)):
+            colourD(delimiters[0], colour)
+            recHighlight(substrings[i], leftDel, colour+1)
+    else:
+        highLight(substrings, delimiters[0], colour)
+        
+    
+
 
 def main():
     print("spit out patterns")
     
     dummyKey = getLine("dummykey_baked")
     partialKey = getLine("partialKey_baked")
-    deliminator = '028201'
+    #deliminator = '028201'
+    #delimiters = ['028201', '02818100', '010001']
+    delimiters = ['028201', '02818', '010001']
+    #delimiters = ['02820101','02820100' '02818100', '010001']
     print("Dummy key: ")
-    highLight(dummyKey, deliminator)
+    recHighlight(dummyKey, delimiters, 0)
     print()
     print("Partial key:")
-    highLight(partialKey, deliminator)
+    recHighlight(partialKey, delimiters, 0)
     
 if __name__ == "__main__":
     main()
