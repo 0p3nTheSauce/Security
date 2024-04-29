@@ -1,0 +1,5 @@
+Device family: Cisco Aironet 1200s
+Device OS: Cisco OS
+Authentication mechanism: CISCO Lightweight Extensible Authentication Protocol
+Challenge: 53:7a:33:3a:a2:08:38:07
+Response: 95:e1:4a:5b:6c:0a:18:26:8e:18:7b:da:0b:30:c4:d8:af:d3:38:ad:c5:f3:86:ae
